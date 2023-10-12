@@ -1,0 +1,390 @@
+/*-----------COLOR PALLETE-------------*/
+:root {
+  --pink: #ea8fea;
+  --pastel: #ffaacf;
+  --blueLight: #b9f3e4;
+  --yellow: #f6e6c2;
+}
+
+/*-----------GENERAL-------------*/
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+}
+html,
+body {
+  overflow-x: hidden;
+}
+
+/*-----------HEADER-----------*/
+header {
+  min-height: 100vh;
+  width: 100%;
+  background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)),
+    url(../images/banner2.jpg);
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+nav {
+  display: flex;
+  padding: 2% 6%;
+  justify-content: space-between;
+  align-items: center;
+}
+nav img {
+  width: 64px;
+}
+.nav-links {
+  flex: 1;
+  text-align: right;
+}
+.nav-links ul li {
+  list-style: none;
+  display: inline-block;
+  padding: 8px 12px;
+  position: relative;
+}
+.nav-links ul li a {
+  color: var(--pastel);
+  text-decoration: none;
+  font-size: 13px;
+}
+.nav-links ul li::after {
+  content: "";
+  width: 0%;
+  height: 2px;
+  background: var(--blueLight);
+  display: block;
+  margin: auto;
+  transition: 0.5s;
+}
+.nav-links ul li:hover::after {
+  width: 100%;
+}
+.text-box {
+  width: 90%;
+  color: var(--pastel);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.text-box h1 {
+  font-size: 50px;
+}
+.text-box p {
+  margin: 10px 0 40px;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--pastel);
+}
+.text-box h1:hover {
+  color: var(--pink);
+  font-size: 55px;
+  transition: 1s;
+}
+.text-box h1:not(:hover) {
+  color: var(--pastel);
+  font-size: 50px;
+  transition: 1s;
+}
+.text-box p:hover {
+  color: var(--pink);
+  font-size: 25px;
+  transition: 1s;
+}
+.text-box p:not(:hover) {
+  color: var(--pastel);
+  font-size: 20px;
+  transition: 1s;
+}
+nav .fa-solid {
+  display: none;
+}
+
+@media (max-width: 700px) {
+  .text-box h1 {
+    font-size: 20px;
+  }
+  .nav-links ul li {
+    display: block;
+  }
+  .nav-links {
+    position: absolute;
+    background: var(--blueLight);
+    height: 100vh;
+    width: 200px;
+    top: 0;
+    right: -200px;
+    text-align: left;
+    z-index: 2;
+    transition: 1s;
+  }
+  nav .fa-solid {
+    display: block;
+    color: var(--pastel);
+    margin: 10px;
+    font-size: 22px;
+    cursor: pointer;
+  }
+  .nav-links ul {
+    padding: 30px;
+  }
+}
+
+/*-----------ABOUT TAMAGOCHI-----------*/
+.rowcenter {
+  margin-top: 2%;
+  display: flex;
+  justify-content: center;
+}
+
+.commercial-col img {
+  max-width: 100%;
+  height: auto;
+}
+/*-----------ABOUT US-----------*/
+.externallink {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+/*-----------COMMERCIAL-----------*/
+
+.row {
+  margin-top: 5%;
+  display: flex;
+  justify-content: space-between;
+}
+.commercial {
+  width: 80%;
+  margin: auto;
+  padding-top: 100px;
+  text-align: center;
+}
+.commercial-col {
+  flex-basis: 40%;
+  border-radius: 10px;
+  text-align: center;
+  background: var(--pastel);
+  padding: 25px;
+  cursor: pointer;
+  display: flex;
+}
+.commercial-col video {
+  padding: 0;
+}
+.commercial-col p {
+  text-align: justify;
+}
+.commercial-col img {
+  padding-top: 10px;
+}
+
+#message {
+  display: none;
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2rem;
+  color: var(--pink);
+  text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.5);
+}
+
+.commercial-col img:hover {
+  transform: scale(1.1);
+}
+
+.commercial-col img:hover + #message {
+  display: block;
+}
+
+#video-container {
+  position: relative;
+}
+
+#playBtn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  line-height: 1;
+  color: #333;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+#playBtn.hide {
+  opacity: 0.1;
+}
+
+@media (max-width: 700px) {
+  .row {
+    flex-direction: column;
+  }
+  .commercial {
+    width: 100%;
+    padding-top: 50px;
+  }
+  .commercial-col {
+    flex-basis: 100%;
+    margin-bottom: 25px;
+  }
+  .commercial-col video {
+    max-width: 100%;
+  }
+}
+
+/*-----------FOOTER-----------*/
+
+footer {
+  width: 100%;
+  text-align: center;
+  padding: 30px 0;
+}
+
+.footer h4 {
+  margin-bottom: 25px;
+  margin-top: 20px;
+  font-weight: 600;
+}
+
+.icons .fa-brands {
+  color: var(--blueLight);
+  margin: 0 13px;
+  cursor: pointer;
+  padding: 18px 0;
+}
+
+.fa-heart {
+  color: var(--blueLight);
+}
+
+/*-----------FORM-------------*/
+
+#tileParagraph{
+  height: 400;
+  text-align: center;
+  margin: 40px;
+  font-size: 24px;
+}
+
+form {
+  max-width: 500px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: var(--pastel);
+  border: 1px solid var(--pastel);
+  border-radius: 5px;
+}
+
+fieldset {
+  border: none;
+  background-color: var(--pink);
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.my-legend {
+  transform: translateY(20px);
+  color: white;
+}
+.feedbacktext {
+  color: white;
+}
+label {
+  position: relative;
+  margin-top: 20px;
+  display: block;
+  margin-bottom: 5px;
+  transition: transform 0.2s ease-in-out;
+}
+
+input[type="text"],
+input[type="email"],
+select,
+textarea {
+  margin-top: 20px;
+  width: 100%;
+  padding: 10px; 
+  box-sizing: border-box;
+  margin: auto;
+  display: block;
+  border: 1px solid var(--blueLight);
+  border-radius: 5px;
+}
+
+.rating {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.rating input[type="radio"] {
+  display: none;
+}
+
+.rating label {
+  cursor: pointer;
+  font-size: 30px;
+  color: var(--yellow);
+}
+
+.rating label:before {
+  content: "\2606";
+}
+
+.rating input[type="radio"]:checked ~ label:before {
+  content: "\2605";
+}
+
+button[type="submit"] {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: block;
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  background-color: var(--blueLight);
+  color: var(--pink);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: var(--pastel);
+}
+
+textarea {
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 200px;
+  resize: none;
+  position: relative; 
+}
+
+textarea:focus + label {
+  transform: translateX(20px);
+  position: absolute;
+  transition: transform 0.2s ease-in-out;
+}
